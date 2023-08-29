@@ -1,0 +1,21 @@
+{
+  "productName": "BVEE",
+  "directories": {
+    "output": "release/"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "icon": "public/logo.ico"
+  },
+  "nsis": {
+    "oneClick": false, 
+    "allowToChangeInstallationDirectory": true
+  }
+}
