@@ -107,7 +107,7 @@ ipcMain.on('saveAs-json-file', async (event, jsonData, filePath) => {
 ipcMain.on('save-json-file', (_event, jsonData, filePath) => {
   const jsonString = JSON.stringify(jsonData, null, 2);
   fs.writeFileSync(filePath, jsonString, 'utf-8');
-  ipcMain.removeAllListeners('save-json-file');
+  //ipcMain.removeAllListeners('save-json-file');
 });
 
 

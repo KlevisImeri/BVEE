@@ -51,7 +51,7 @@ function YearlyTable({ jsonData, setTitle}: Interface) {
 
   function daysBetween(startDate: Date, endDate: Date) {
     const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
-    const numDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const numDays = Math.round(timeDiff / (1000 * 3600 * 24));
     return numDays;
   }
 
@@ -82,7 +82,6 @@ function YearlyTable({ jsonData, setTitle}: Interface) {
       top: `${top}px` 
     };
 
-
     let markerColor = '';
     if (generator.remonte.includes(period)) {
       markerColor = 'bg-red-500';
@@ -96,7 +95,7 @@ function YearlyTable({ jsonData, setTitle}: Interface) {
       <div key={`${generator.name}-${startDate}-${endDate}`} className="absolute" style={markerStyle}>
         <div className='text-xs'>{startDate}</div> 
         <div className={`h-3 w-full text-xs  flex items-center justify-center ${markerColor}`}>
-          {daysBetween(markerStartDate,markerEndDate)}
+          {daysBetween(markerStartDate,markerEndDate)+1}
         </div>
         <div className='text-xs text-right'>{endDate}</div>
       </div>
